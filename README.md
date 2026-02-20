@@ -6,13 +6,18 @@ O Previsão-IA é uma aplicação web que une dados meteorológicos em tempo rea
 
 A aplicação permite busca por texto ou pesquisa por voz, tornando a experiência moderna e interativa.
 
+
+
 🚀 DEMONSTRAÇÃO
 
 🔗 Deploy: https://previsao-tempo-ia.vercel.app/
 
 🔗 Repositório: https://github.com/Mateus-DB/Previsao_tempo_IA
 
+
+
 ✨ FUNCIONALIDADES
+
 🌎 Busca Global
 
 O usuário pode pesquisar qualquer cidade, estado ou país do mundo.
@@ -37,7 +42,10 @@ Após receber os dados climáticos, o usuário pode clicar em “Sugestão de Ro
 
 Layout responsivo, estilizado com Tailwind CSS.
 
+
+
 🧠 COMO FUNCIONA
+
 1️⃣ Busca da Localização
 
 O usuário informa a localização digitando ou utilizando comando de voz.
@@ -91,6 +99,8 @@ Aplicar TypeScript em projeto real
 Trabalhar com reconhecimento de voz
 
 Explorar uso prático de Inteligência Artificial no front-end
+
+
 
 ⚙️ EXECUÇÃO LOCAL
 # Clone o repositório
