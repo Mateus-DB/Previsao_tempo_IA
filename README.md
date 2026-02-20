@@ -1,69 +1,79 @@
 🌤️ Previsão-IA
 
-Previsão-IA é uma aplicação web que combina dados climáticos em tempo real com Inteligência Artificial para entregar não apenas a previsão do tempo, mas também uma sugestão inteligente de vestuário baseada nas condições climáticas.
+Aplicação web que combina dados climáticos em tempo real com Inteligência Artificial para entregar não apenas a previsão do tempo, mas também uma sugestão inteligente de vestuário baseada nas condições atuais.
 
-O usuário pode pesquisar por texto ou utilizar pesquisa por voz, tornando a experiência mais moderna e acessível.
+A aplicação permite busca por texto ou por comando de voz, tornando a experiência moderna, acessível e interativa.
 
 🚀 Demonstração
 
 🔗 Deploy: https://previsao-tempo-ia.vercel.app/
 🔗 Repositório: https://github.com/Mateus-DB/Previsao_tempo_IA
 
-✨ Funcionalidades
+✨ Principais Funcionalidades
 
-🌎 Busca por cidade, estado ou país de qualquer lugar do mundo
-🎤 Pesquisa por voz
+🌎 Busca por cidade, estado ou país (qualquer lugar do mundo)
+
+🎤 Pesquisa por voz integrada
+
 🌡️ Exibição da temperatura atual
+
 💧 Exibição da umidade do ar
-🤖 Sugestão de roupa baseada na previsão do tempo (IA)
-⚡ Interface simples, rápida e responsiva
 
-🧠 Como Funciona
+🤖 Geração de sugestão de roupa com IA
 
-O usuário digita ou fala o nome da localização desejada
+⚡ Interface responsiva e moderna
+
+🧠 Fluxo da Aplicação
+
+O usuário digita ou utiliza a pesquisa por voz para informar a localização.
 
 A aplicação consome a API do OpenWeather para obter:
 
-Temperatura
+Temperatura atual
 
-Umidade
+Umidade do ar
 
-Após a exibição dos dados climáticos, o usuário pode clicar em "Sugestão de Roupa"
+Os dados são exibidos na interface.
 
-A aplicação consome a API da Groq (IA), que analisa os dados da previsão e gera uma recomendação personalizada de vestuário
+O usuário pode clicar em "Sugestão de Roupa".
+
+A aplicação consome a API da Groq, que gera uma recomendação personalizada com base nos dados climáticos.
 
 🛠️ Tecnologias Utilizadas
-Tecnologia	Função
-React	Construção da interface e componentização
-TypeScript	Tipagem estática e maior segurança no desenvolvimento
-Tailwind CSS	Estilização moderna e responsiva
-OpenWeather API	Dados climáticos
-Groq API	Geração de sugestão inteligente
-🔌 APIs Utilizadas
 
-🌦️ OpenWeather — Para obter dados meteorológicos em tempo real
+Front-end
 
-🤖 Groq — Para gerar sugestões inteligentes com base na previsão
+React — Construção da interface e componentização
+
+TypeScript — Tipagem estática e maior segurança no desenvolvimento
+
+Tailwind CSS — Estilização moderna e responsiva
+
+Integrações
+
+OpenWeather API — Dados meteorológicos em tempo real
+
+Groq API — Geração de sugestão inteligente via IA
 
 🎯 Objetivo do Projeto
 
 Este projeto foi desenvolvido com foco em:
 
-Praticar consumo de APIs
+Praticar consumo de APIs externas
 
-Trabalhar com integração entre múltiplas APIs
+Integrar múltiplas APIs na mesma aplicação
 
-Implementar reconhecimento de voz
+Trabalhar com tipagem usando TypeScript
 
-Aplicar lógica condicional baseada em dados externos
+Implementar reconhecimento de voz no navegador
 
-Explorar uso prático de IA em aplicações web
+Explorar uso prático de Inteligência Artificial em aplicações web
 
-▶️ Como Executar Localmente
+⚙️ Como Executar o Projeto Localmente
 # Clone o repositório
 git clone https://github.com/seu-usuario/previsao-ia.git
 
-# Acesse a pasta
+# Acesse o diretório
 cd previsao-ia
 
 # Instale as dependências
@@ -72,8 +82,23 @@ npm install
 # Execute o projeto
 npm run dev
 
-⚠️ É necessário configurar suas chaves de API do OpenWeather e da Groq.
+⚠️ É necessário configurar suas variáveis de ambiente com as chaves das APIs (OpenWeather e Groq).
+
+🔐 Configuração das APIs
+
+Crie um arquivo .env na raiz do projeto e adicione suas chaves:
+
+VITE_OPENWEATHER_KEY=sua_chave_aqui
+VITE_GROQ_KEY=sua_chave_aqui
+
 
 💡 Diferencial do Projeto
 
-A combinação de dados climáticos em tempo real + Inteligência Artificial para recomendação personalizada transforma uma simples aplicação de clima em uma experiência mais inteligente e interativa.
+O grande diferencial do Previsão-IA é a combinação de:
+
+✔️ Dados climáticos em tempo real
+✔️ Integração com Inteligência Artificial
+✔️ Sugestão personalizada baseada em contexto
+✔️ Experiência com busca por voz
+
+Transformando uma simples aplicação de clima em uma experiência inteligente e interativa.
