@@ -7,9 +7,11 @@ A aplicação permite busca por texto ou por comando de voz, tornando a experiê
 🚀 Demonstração
 
 🔗 Deploy: https://previsao-tempo-ia.vercel.app/
+
 🔗 Repositório: https://github.com/Mateus-DB/Previsao_tempo_IA
 
-✨ Principais Funcionalidades
+
+✨ Principais Funcionalidades:
 
 🌎 Busca por cidade, estado ou país (qualquer lugar do mundo)
 
@@ -22,6 +24,8 @@ A aplicação permite busca por texto ou por comando de voz, tornando a experiê
 🤖 Geração de sugestão de roupa com IA
 
 ⚡ Interface responsiva e moderna
+
+
 
 🧠 Fluxo da Aplicação
 
@@ -39,9 +43,11 @@ O usuário pode clicar em "Sugestão de Roupa".
 
 A aplicação consome a API da Groq, que gera uma recomendação personalizada com base nos dados climáticos.
 
+
+
 🛠️ Tecnologias Utilizadas
 
-Front-end
+Front-end:
 
 React — Construção da interface e componentização
 
@@ -54,6 +60,8 @@ Integrações
 OpenWeather API — Dados meteorológicos em tempo real
 
 Groq API — Geração de sugestão inteligente via IA
+
+
 
 🎯 Objetivo do Projeto
 
@@ -69,6 +77,8 @@ Implementar reconhecimento de voz no navegador
 
 Explorar uso prático de Inteligência Artificial em aplicações web
 
+
+
 ⚙️ Como Executar o Projeto Localmente
 # Clone o repositório
 git clone https://github.com/seu-usuario/previsao-ia.git
@@ -82,6 +92,8 @@ npm install
 # Execute o projeto
 npm run dev
 
+
+
 ⚠️ É necessário configurar suas variáveis de ambiente com as chaves das APIs (OpenWeather e Groq).
 
 🔐 Configuração das APIs
@@ -90,6 +102,7 @@ Crie um arquivo .env na raiz do projeto e adicione suas chaves:
 
 VITE_OPENWEATHER_KEY=sua_chave_aqui
 VITE_GROQ_KEY=sua_chave_aqui
+
 
 
 💡 Diferencial do Projeto
