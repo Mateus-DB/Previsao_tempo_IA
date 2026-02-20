@@ -8,7 +8,7 @@ A aplicação permite busca por texto ou pesquisa por voz, tornando a experiênc
 
 
 
-🚀 DEMONSTRAÇÃO
+🚀 DEMONSTRAÇÃO:
 
 🔗 Deploy: https://previsao-tempo-ia.vercel.app/
 
@@ -16,7 +16,7 @@ A aplicação permite busca por texto ou pesquisa por voz, tornando a experiênc
 
 
 
-✨ FUNCIONALIDADES
+✨ FUNCIONALIDADES:
 
 🌎 Busca Global
 
@@ -44,7 +44,7 @@ Layout responsivo, estilizado com Tailwind CSS.
 
 
 
-🧠 COMO FUNCIONA
+🧠 COMO FUNCIONA:
 
 1️⃣ Busca da Localização
 
@@ -68,7 +68,7 @@ A IA gera uma recomendação de vestuário personalizada
 
 
 
-🛠️ TECNOLOGIAS UTILIZADAS
+🛠️ TECNOLOGIAS UTILIZADAS:
 
 🎨 Front-end
 
@@ -86,7 +86,7 @@ OpenWeather API — Dados meteorológicos
 Groq API — Geração de resposta inteligente com IA
 
 
-🎯 OBJETIVO DO PROJETO
+🎯 OBJETIVO DO PROJETO:
 
 Este projeto foi desenvolvido para:
 
@@ -122,7 +122,7 @@ VITE_OPENWEATHER_KEY=sua_chave_aqui
 VITE_GROQ_KEY=sua_chave_aqui
 
 
-💡 DIFERENCIAL
+💡 DIFERENCIAL:
 
 ✔️ Integração entre clima em tempo real + IA
 ✔️ Busca por voz
