@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+🌤️ Previsão-IA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Previsão-IA é uma aplicação web que combina dados climáticos em tempo real com Inteligência Artificial para entregar não apenas a previsão do tempo, mas também uma sugestão inteligente de vestuário baseada nas condições climáticas.
 
-Currently, two official plugins are available:
+O usuário pode pesquisar por texto ou utilizar pesquisa por voz, tornando a experiência mais moderna e acessível.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Demonstração
 
-## React Compiler
+🔗 Deploy: https://previsao-tempo-ia.vercel.app/
+🔗 Repositório: https://github.com/Mateus-DB/Previsao_tempo_IA
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨ Funcionalidades
 
-## Expanding the ESLint configuration
+🌎 Busca por cidade, estado ou país de qualquer lugar do mundo
+🎤 Pesquisa por voz
+🌡️ Exibição da temperatura atual
+💧 Exibição da umidade do ar
+🤖 Sugestão de roupa baseada na previsão do tempo (IA)
+⚡ Interface simples, rápida e responsiva
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🧠 Como Funciona
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+O usuário digita ou fala o nome da localização desejada
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+A aplicação consome a API do OpenWeather para obter:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Temperatura
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Umidade
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Após a exibição dos dados climáticos, o usuário pode clicar em "Sugestão de Roupa"
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+A aplicação consome a API da Groq (IA), que analisa os dados da previsão e gera uma recomendação personalizada de vestuário
+
+🛠️ Tecnologias Utilizadas
+Tecnologia	Função
+React	Construção da interface e componentização
+TypeScript	Tipagem estática e maior segurança no desenvolvimento
+Tailwind CSS	Estilização moderna e responsiva
+OpenWeather API	Dados climáticos
+Groq API	Geração de sugestão inteligente
+🔌 APIs Utilizadas
+
+🌦️ OpenWeather — Para obter dados meteorológicos em tempo real
+
+🤖 Groq — Para gerar sugestões inteligentes com base na previsão
+
+🎯 Objetivo do Projeto
+
+Este projeto foi desenvolvido com foco em:
+
+Praticar consumo de APIs
+
+Trabalhar com integração entre múltiplas APIs
+
+Implementar reconhecimento de voz
+
+Aplicar lógica condicional baseada em dados externos
+
+Explorar uso prático de IA em aplicações web
+
+▶️ Como Executar Localmente
+# Clone o repositório
+git clone https://github.com/seu-usuario/previsao-ia.git
+
+# Acesse a pasta
+cd previsao-ia
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
+npm run dev
+
+⚠️ É necessário configurar suas chaves de API do OpenWeather e da Groq.
+
+💡 Diferencial do Projeto
+
+A combinação de dados climáticos em tempo real + Inteligência Artificial para recomendação personalizada transforma uma simples aplicação de clima em uma experiência mais inteligente e interativa.
