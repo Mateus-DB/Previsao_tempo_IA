@@ -25,7 +25,7 @@ function App() {
   const [resposta, setResposta] = useState<string>()
 
   const chave = import.meta.env.VITE_API_KEY;
-  const chaveIA = import.meta.env.VITE_API_IA;
+  const chaveWeather = import.meta.env.VITE_API_WEATHER;
 
   const fetchData = async (city: string) => {
 
@@ -40,7 +40,7 @@ function App() {
     }
 
     try {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${chave}&units=metric&lang=pt_br`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${chaveWeather}&units=metric&lang=pt_br`);
 
       const data = await response.json();
       setLocation(data)
@@ -61,15 +61,21 @@ function App() {
     const temperatura = document.querySelector("#temp")?.textContent
     const umidade = document.querySelector("#umidade")?.textContent
 
+    if (!chave) {
+      console.error("VITE_API_IA não está definida. Defina a variável de ambiente.")
+      setResposta("Chave de IA não configurada. Verifique VITE_API_IA.")
+      return
+    }
+
     try {
-      const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + chaveIA
+          "Authorization": "Bearer " + chave
         },
         body: JSON.stringify({
-          model: "meta-llama/llama-4-maverick-17b-128e-instruct",
+          model: "openrouter/free",
           messages: [
             {
               "role": "user",
@@ -77,17 +83,23 @@ function App() {
             }
           ]
         })
-
-
       })
 
+      if (!response.ok) {
+        const text = await response.text()
+        console.error("Erro na API de IA:", response.status, text)
+        setResposta(`Erro na requisição: ${response.status}. Veja o console para detalhes.`)
+        return
+      }
+
       const dados = await response.json();
-      const respostaIa = dados.choices[0].message.content
+      const respostaIa = dados?.choices?.[0]?.message?.content ?? "Resposta vazia"
 
       setResposta(respostaIa)
 
     } catch (erro) {
-      throw new Error("Falha ao fazer requisição!")
+      console.error("Falha ao fazer requisição:", erro)
+      setResposta("Falha ao fazer requisição. Veja o console para mais detalhes.")
     }
   }
 
@@ -106,11 +118,17 @@ function App() {
     }
   }
 
+  const keyEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      fetchData(city);
+    }
+  }
+
 
   return (
     <div className="bg-[rgba(0,0,0,0.9)] w-112.5 p-5 rounded-[20px] ">
 
-      <input type="text" placeholder="Digite o nome da cidade..." className="border-none outline-none p-2.5 text-[20px] rounded-[10px] bg-[#7c7c7c2b] text-white w-[calc(100%-100px)]" value={city} onChange={(e) => setCity(e.target.value)} ref={inputRef} />
+      <input type="text" placeholder="Digite o nome da cidade..." className="border-none outline-none p-2.5 text-[20px] rounded-[10px] bg-[#7c7c7c2b] text-white w-[calc(100%-100px)]" value={city} onChange={(e) => setCity(e.target.value)} ref={inputRef} onKeyDown={keyEnter} />
 
       <button className="p-2.5 border-none bg-[#7c7c7c2b] rounded-full ml-3 mt-2.5 float-right cursor-pointer flex justify-center items-center transition duration-400 hover:bg-[#7c7c7c] scale-[1.2] active:scale-[1] w-8 h-8" onClick={() => fetchData(city)} >
         <img src={lupa} alt="buscar" className="brightness-0 invert" />
